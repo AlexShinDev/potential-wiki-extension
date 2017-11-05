@@ -1,23 +1,59 @@
-//Global Variables
-let articleTitle 
-//Grabs Article Title in current tab
+ //Grabs Article Title in current tab
+ let articleTitle = "";
+ let articleHighlight = "";
 chrome.tabs.executeScript( {
   code: "window.document.getElementById('firstHeading').innerHTML;"
 }, function(title) {
   document.getElementById("fHeadingEx").innerHTML = title;
-  articleTitle = title
-  console.log(articleTitle[0]);
+
+  articleTitle = title[0]
+
 });
-console.log(articleTitle)
+
 //Grabs selection in current tab
 chrome.tabs.executeScript( {
     code: "window.getSelection().toString();"
 }, function(selection) {
     document.getElementById("highlight").innerHTML = selection[0];
-    let articleHighlight = selection;
-    console.log(selection[0]);
+
+    articleHighlight = selection[0];
 });
-    console.log(articleHighlight);
+
+
+
+
+
+$(document).ready(function() {
+
+  let processedUri = encodeURIComponent(articleTitle);
+
+  $('#sendInfo').on('click', function() {
+    $.get(
+        "http://localhost:3000/articles/chrome_extension/" + processedUri
+        )
+  setTimeout(function(){ 
+    $.post(
+      "http://localhost:3000/highlights/",
+      {
+        selection: articleHighlight,
+        user_id: 1,
+        article_id: 34
+      })
+  }, 3000);
+
+  });
+});
+// var jqxhr = $.get( "http://localhost:3000/articles/" + processedUri)
+//   .done(function() {
+//     alert( "success" );
+//   });
+//   .fail(function() {
+//     alert( "error" );
+//   });
+
+
+
+//send article api, process information and save, callback for highlight
 
 //Everything below this line is for testing...
 
