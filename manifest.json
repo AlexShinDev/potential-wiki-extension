@@ -1,17 +1,15 @@
 {
   "manifest_version": 2,
 
-  "name": "Test Extension",
-  "description": "This extension allows the user to change the background color of the current page.",
+  "name": "Academia",
+  "description": "Grab highlights from articles and send to your app",
   "version": "1.0",
 
   "browser_action": {
     "default_icon": "icon.png",
-    "default_popup": "popup.html",
-    "default_title": "The Test"
+    "default_popup": "popup.html"
   },
 
-  "options_page": "options.html",
 
   "permissions": [
     "http://*/*",

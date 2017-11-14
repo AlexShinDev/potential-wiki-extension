@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--
  This page is shown when the extension button is clicked, because the
  "browser_action" field in manifest.json contains the "default_popup" key with
@@ -9,7 +9,8 @@
     <title>Getting Started Extension's Popup</title>
     <style type="text/css">
       body {
-        margin: 100px;
+        margin: 50px 0px;
+        padding-left: 10px;
         white-space: nowrap;
       }
 
@@ -19,50 +20,17 @@
         justify-content: space-between;
       }
     </style>
-
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-    -->
     <script src="jquery-3.2.1.min.js"></script>
     <script src="popup.js"></script>
   </head>
 
   <body>
-  <!--  Hello World! 
-  <h1 id="greet">Hello World!</h1>
-    <input type="text" id="name">
- -->
- <h3><b>Title:</b> <span id="fHeadingEx"></span></h3>
- <h3><b>Selection:</b> <span id="highlight"></span></h3>
- <a id="sendInfo">Send info</a>
-<!--  <button id="sendInput">Send Input</button> -->
+    <h2>Academia Highlight Selector</h2>
+    <h3><b>Title:</b> </h3>
+    <span id="fHeadingEx"></span>
+    <h3><b>Selection:</b> </h3>
+    <span id="highlight"></span></br>
+    <button id="sendInfo">Send Selection</button>
 
- <!-- <button id="getTag"> Get Article Title</button> -->
-<!--  <h1>Budget Manager</h1>
- <h2>Total Spent: <span id="total">0</span></h2>
- <h2>Limit: <span id="limit">0</span></h2>
- <h3>Enter Amount</h3>
- <input id="amount" type="text">
- <input id="spendAmount" type="submit" value="Spend"/> -->
-
-<!-- <h1 id="change">Plz change...</h1>
-<button onclick="changeHTag()">Change Tag</button>
- -->
-<!-- getting started
-    <h1>Background Color Changer</h1>
-    <div id="container">
-      <span>Choose a color</span>
-      <select id="dropdown">
-        <option selected disabled hidden value=''></option>
-        <option value="white">White</option>
-        <option value="pink">Pink</option>
-        <option value="green">Green</option>
-        <option value="yellow">Yellow</option>
-      </select>
-    </div>
-  -->
   </body>
 </html>
